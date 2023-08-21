@@ -128,11 +128,11 @@ class CarGame {
         let carY = this.canvas.height / 2;
         const position = this.config.car.position;
 
-		if(position === "top"){
-			carY -=40;
-		}else if(position === "down"){
-			carY +=40;
-		} else if(position === "left"){
+	if(position === "top"){
+	    carY -=40;
+	}else if(position === "down"){
+	    carY +=40;
+	} else if(position === "left"){
             carX -= 40;
         } else if(position === "right"){
             carX += 40;
@@ -160,8 +160,8 @@ class CarGame {
         console.log(this.config.speed);
         this.config.car.find_obstacle = true;
         // Comprobar si el color del pixel coincide con los colores de colisión
-
-		const test = this.colorMatch(pixel, this.colors.oil);
+	    
+	const test = this.colorMatch(pixel, this.colors.oil);
 
         if (this.colorMatch(pixel, this.colors.oil)) {
             this.applyOilEffect();
