@@ -303,7 +303,21 @@ class Teclado {
     }
 }
 
-window.onload = function(){
-    game = new CarGame(1000, 500);
-    teclado = new Teclado(game);
-}
+// Variables globales para el juego y el teclado
+let game;
+let teclado;
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtén una referencia al botón
+    const startButton = document.getElementById("startButton");
+
+    // Registra un evento de clic para el botón "Empezar juego"
+    startButton.addEventListener("click", function() {
+        // Crea una instancia del juego
+        game = new CarGame(1000, 500);
+        teclado = new Teclado(game);
+
+        startButton.style.display = "none"; // Oculta el botón después de iniciar el juego
+    });
+});
+
