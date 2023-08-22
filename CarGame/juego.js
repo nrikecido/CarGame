@@ -31,7 +31,7 @@ class CarGame {
         // Movimiento y posición
         this.config = {
             car: {
-                x: 1320, // xxx calcular la salida de meta
+                x: 1370, // xxx calcular la salida de meta
                 y: 1590,
                 position: "top"
             },
@@ -55,7 +55,7 @@ class CarGame {
 			oil: { r: 0, g: 0, b: 0 }, // negro
 			glue: { r: 255, g: 255, b: 255 }, // blanco
 			crash: { r: 63, g: 72, b: 204 }, // azul
-			lap: { r: 88, g: 210, b: 0 }, // verde
+			lap: { r: 63, g: 210, b: 0 }, // verde
 		};
         this.lapCounter = 0;
 		this.loader([this.image_track, this.image_track2, this.image_car]);
@@ -128,11 +128,11 @@ class CarGame {
         let carY = this.canvas.height / 2;
         const position = this.config.car.position;
 
-	if(position === "top"){
-	    carY -=40;
-	}else if(position === "down"){
-	    carY +=40;
-	} else if(position === "left"){
+        if(position === "top"){
+            carY -=40;
+        }else if(position === "down"){
+            carY +=40;
+        } else if(position === "left"){
             carX -= 40;
         } else if(position === "right"){
             carX += 40;
@@ -157,11 +157,12 @@ class CarGame {
             g: imageData.data[1],
             b: imageData.data[2]
         };
-        console.log(this.config.speed);
+
+        console.log("Valor de píxeles en la posición X:", carX, "Y:", carY);
+    console.log("Valor de píxeles R:", pixel.r, "G:", pixel.g, "B:", pixel.b);
+
         this.config.car.find_obstacle = true;
         // Comprobar si el color del pixel coincide con los colores de colisión
-	    
-	const test = this.colorMatch(pixel, this.colors.oil);
 
         if (this.colorMatch(pixel, this.colors.oil)) {
             this.applyOilEffect();
@@ -184,6 +185,7 @@ class CarGame {
     }
 
     colorMatch(pixel, targetColor) {
+        console.log();
         // Comprobar si el color del pixel coincide con el color objetivo
         return (
             ( pixel.r >= (targetColor.r - 5) && pixel.r <= (targetColor.r + 5) ) &&
@@ -211,13 +213,21 @@ class CarGame {
         this.config.speed = 0;
     }
 
-    applyLapEffect(){
+    applyLapEffect() {
+        this.lapCounter++;
+        this.updateLapCounter(); // Actualiza el marcador de vueltas en el HTML
         console.log("Vuelta completada. Vueltas totales: " + this.lapCounter);
     }
 
     applyGlueEffect(){
         this.config.speed = 2;
         console.log('HAS PASADO POR PEGAMENTO');
+    }
+
+    updateLapCounter() {
+        // Actualiza el marcador de vueltas en el HTML
+        const lapCounterElement = document.getElementById('lapCounter');
+        lapCounterElement.textContent = `Laps: ${this.lapCounter}`;
     }
 } 
 

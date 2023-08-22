@@ -1,8 +1,7 @@
-/* Estilo para el contenedor principal */
-body{
+body {
     background-color: rgb(119, 138, 132);
 }
-/* Estilo para el contenedor principal */
+
 .game {
     display: flex;
     align-items: center;
@@ -10,36 +9,27 @@ body{
     margin: 20px;
 }
 
-/* Estilo para el título */
 h1 {
     font-size: 24px;
-    margin-right: 20px; /* Agregamos un margen a la derecha del título */
+    margin-right: 20px;
 }
 
-/* Estilo para el canvas */
 .juego {
     border: 1px solid #000;
-    flex: 7; /* Cambiamos flex a 7 para que ocupe el 70% del espacio */
-    max-width: none; /* Eliminamos la restricción de ancho máximo */
+    flex: 7;
+    max-width: none;
     border-radius: 5px;
 }
 
-/* Estilo para las opciones */
 .opciones {
     margin-top: 20px;
     font-size: 18px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 3; /* Cambiamos flex a 3 para que ocupe el 30% del espacio */
+    flex: 3;
 }
 
-/* Estilo para los checkboxes y etiquetas */
-.opciones input[type="checkbox"] {
-    margin: 5px 0; /* Agregamos margen vertical para separar los elementos */
-}
-
-/* Estilo para el botón */
 .start {
     padding: 10px 20px;
     background-color: #007BFF;
@@ -50,7 +40,15 @@ h1 {
     margin-top: 20px;
 }
 
-/* Estilo para el botón al pasar el cursor sobre él */
 .start:hover {
     background-color: #0056b3;
+}
+
+.lapCounter {
+    background-color: #3498db;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
 }
