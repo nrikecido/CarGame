@@ -35,7 +35,7 @@ class CarGame {
                 y: 1590,
                 position: "top"
             },
-            speed: 15,
+            speed: 5,
             find_obstacle: false
         };
 
@@ -181,7 +181,7 @@ class CarGame {
     //Necesitamos pasar de nuevo los efectos a false
     deactivateAllEffects(){
         this.config.car.find_obstacle = false;
-		this.config.speed = 15;
+		this.config.speed = 5;
     }
 
     colorMatch(pixel, targetColor) {
@@ -215,7 +215,7 @@ class CarGame {
 
     applyLapEffect() {
         this.lapCounter++;
-        this.updateLapCounter(); // Actualiza el marcador de vueltas en el HTML
+        this.updateLapCounter();
         console.log("Vuelta completada. Vueltas totales: " + this.lapCounter);
     }
 
@@ -225,12 +225,11 @@ class CarGame {
     }
 
     updateLapCounter() {
-        // Actualiza el marcador de vueltas en el HTML
         const lapCounterElement = document.getElementById('lapCounter');
         lapCounterElement.textContent = `Laps: ${this.lapCounter}`;
     }
-} 
-
+    
+}
 
 
 class Teclado {
@@ -287,7 +286,7 @@ class Teclado {
     }
     //Comprobador que es llamado cuando alguna tecla pasa a true. 
     checkKey() {
-        const {ArrowUp, ArrowDown, ArrowRight, ArrowLeft} = this.keys; //Método de desestructuración de objetos. Se asignan valores a las variables,
+        const {ArrowUp, ArrowDown, ArrowRight, ArrowLeft, Space} = this.keys; //Método de desestructuración de objetos. Se asignan valores a las variables,
                                                                               //y así evitamos tener que usar continuamente el this.keys.
 
         const carGame = this.game;
@@ -309,6 +308,8 @@ class Teclado {
             carConfig.position = "right";
         } else if (ArrowLeft) {
             carConfig.position = "left";
+        } else if (Space){
+            console.log("ddmdmdmdm");
         }
     }
 }
