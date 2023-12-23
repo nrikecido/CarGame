@@ -12,7 +12,7 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para obten
 
 MIT License
 
-Copyright (c) [2022] [Nrikecido]
+Copyright (c) [2023] [Nrikecido]
 
 Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia de este software y archivos de documentación asociados (el "Software"), para tratar el Software sin restricciones, incluyendo sin limitación los derechos de uso, copia, modificación, fusión, publicación, distribución, sublicencia y/o venta de copias del Software, y permitir a las personas a las que se les proporcione el Software hacerlo, bajo las siguientes condiciones:
 
@@ -34,7 +34,7 @@ This project is under the MIT license. See the LICENSE file for more details.
 
 MIT License
 
-Copyright (c) [2022] [Nrikecido]
+Copyright (c) [2023] [Nrikecido]
 
 Permission is granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge , publication, distribution, sublicense and/or sale of copies of the Software, and allow persons to whom the Software is provided to do so, under the following conditions:
 
